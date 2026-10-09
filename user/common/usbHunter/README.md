@@ -14,11 +14,11 @@
 
 # 4. Build
 
-> 已經整合進 [xbox9](https://github.com/lankahsu520/xbox9)，相關步驟請參考 [xbox9](https://github.com/lankahsu520/xbox9)。
+> 已經整合進 [xbox520](https://github.com/lankahsu520/xbox520)，相關步驟請參考 [xbox520](https://github.com/lankahsu520/xbox520)。
 
    ```bash
 $ pwd
-/work/xbox9
+/work/xbox520
 $ cd user/common/usbHunter
 $ make distclean
 # update 

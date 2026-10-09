@@ -1,18 +1,18 @@
 # 1. Overview
 
-> xbox9 provides build environments such as Yocto and OpenWrt. Although it cannot be used to build the kernel or generate full system images, it can compile applications and required libraries using the corresponding toolchains, and does so more efficiently than Yocto.
+> xbox520 provides build environments such as Yocto and OpenWrt. Although it cannot be used to build the kernel or generate full system images, it can compile applications and required libraries using the corresponding toolchains, and does so more efficiently than Yocto.
 
-> xbox9 ( [Lanka Hsu](lankahsu@gmail.com) 個人實驗開發環境）是整合性的編譯[^1] SDK。
+> xbox520 ( [Lanka Hsu](lankahsu@gmail.com) 個人實驗開發環境）是整合性的編譯[^1] SDK。
 >
 > 提供範本便於軟體工程師編譯自行開發的程式。讓其軟體能順利的在特定硬體和作業系統上執行（簡稱程式跨平臺執行[^2]）。
 >
 > 其中整合了 make、cmake、meson 構建系統和常用 Open Source 。
 
-> xbox9 與市面上的 System integration （如 Yocto、OpenWrt、Buildroot 等）類似，但不能編譯出作業系統和 Toolchain。也因此編譯時間較短，利於軟體工程師開發與除錯。
+> xbox520 與市面上的 System integration （如 Yocto、OpenWrt、Buildroot 等）類似，但不能編譯出作業系統和 Toolchain。也因此編譯時間較短，利於軟體工程師開發與除錯。
 >
 > 當然獲得不同開發平台的 Toolchain，也將決定“可”執行的平台。
 
-> 大廠因為 GPL 的關係，會提供相對應的 sources 和堪用的 Toolchain；就舉很簡單的情境，當這些工具裏都沒有 libssl.so 時，就得要使用者自行編譯，xbox9 將是最佳選擇。
+> 大廠因為 GPL 的關係，會提供相對應的 sources 和堪用的 Toolchain；就舉很簡單的情境，當這些工具裏都沒有 libssl.so 時，就得要使用者自行編譯，xbox520 將是最佳選擇。
 
 # 2. Depend on
 
@@ -83,7 +83,7 @@
 | meson  | 1.10.0                              |
 | ninja  | 1.13.0.git.kitware.jobserver-pipe-1 |
 
-## 3.2. Tree of xbox9
+## 3.2. Tree of xbox520
 
 > 個人習慣擺放的位置如下
 
@@ -123,8 +123,8 @@
 ```bash
 $ pwd
 /work
-$ git clone https://github.com/lankahsu520/xbox9.git
-$ cd xbox9
+$ git clone https://github.com/lankahsu520/xbox520.git
+$ cd xbox520
 ```
 
 ## 4.2. configure
@@ -143,10 +143,10 @@ $ make
 $ make install
 # 編譯後的檔案都會放入 ${SDK_ROOT_DIR}
 $ echo ${SDK_ROOT_DIR}
-/work/xbox9/install/UTILX9_X86
+/work/xbox520/install/UTILX9_X86
 
 $ tree -L 1 ${SDK_ROOT_DIR}
-/work/xbox9/install/UTILX9_X86
+/work/xbox520/install/UTILX9_X86
 ├── bin
 ├── etc
 ├── include
@@ -171,10 +171,10 @@ $ tree -L 1 ${SDK_ROOT_DIR}
 $ make romfs
 # 編譯後的檔都會放入 ${HOMEX_ROOT_DIR}
 $ echo ${HOMEX_ROOT_DIR}
-/work/xbox9/install/UTILX9_X86_rootfs
+/work/xbox520/install/UTILX9_X86_rootfs
 
 $ tree -L 1 ${HOMEX_ROOT_DIR}
-/work/xbox9/install/UTILX9_X86_rootfs
+/work/xbox520/install/UTILX9_X86_rootfs
 ├── bin
 ├── etc
 ├── include
@@ -345,10 +345,10 @@ $ make romfs
 $ tree -L 3 ${SDK_ROOT_DIR}
 $ tree -L 3 ${HOMEX_ROOT_DIR}
 $ file ${HOMEX_ROOT_DIR}/bin/util_123
-/work/xbox9/install/UTILX9_IMX8MM_rootfs/bin/util_123: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=d275752f2629c66d76db043874f3ecda85b09e1d, for GNU/Linux 5.15.0, stripped
+/work/xbox520/install/UTILX9_IMX8MM_rootfs/bin/util_123: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=d275752f2629c66d76db043874f3ecda85b09e1d, for GNU/Linux 5.15.0, stripped
 
 $ file ${HOMEX_ROOT_DIR}/bin/usbHunter
-/work/xbox9/install/UTILX9_IMX8MM_rootfs/bin/usbHunter: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=3a01e46189d0e3097cb6d3f872746c9952ca88c4, for GNU/Linux 5.15.0, stripped
+/work/xbox520/install/UTILX9_IMX8MM_rootfs/bin/usbHunter: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=3a01e46189d0e3097cb6d3f872746c9952ca88c4, for GNU/Linux 5.15.0, stripped
 ```
 
 # 6. Documentation
@@ -417,7 +417,7 @@ $ file ${HOMEX_ROOT_DIR}/bin/usbHunter
 
 # License
 
-> [xbox9](https://github.com/lankahsu520/xbox9) is available under the BSD-3-Clause license. See the LICENSE file for more info.
+> [xbox520](https://github.com/lankahsu520/xbox520) is available under the BSD-3-Clause license. See the LICENSE file for more info.
 
 # Footnote
 
